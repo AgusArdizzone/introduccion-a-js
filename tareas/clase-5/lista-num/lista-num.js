@@ -1,8 +1,6 @@
-const arrayDeLi = document.querySelectorAll('li');
-const arrayDeOl = document.querySelectorAll('ol');
+const arrayTotal = document.querySelectorAll('.numero');
 
-let arrayTotal = [];
-
+let arrayNumeros = [];
 function calcularPromedio (numeros){
     let total=0;
     for (let i = 0; i < numeros.length; i++) {
@@ -49,17 +47,13 @@ function numMasRepetido (numeros){
     return masRepetido;
 }
 
-for (let i = 0; i < arrayDeLi.length; i++) {
-      arrayTotal.push(Number(arrayDeLi[i].innerText));
+for (let i = 0; i < arrayTotal.length; i++) {
+      arrayNumeros.push(Number(arrayTotal[i].innerText));
 }
 
-for (let i = 0; i < arrayDeOl.length; i++) {
-    arrayTotal.push(Number(arrayDeOl[i].innerText));
-}
+console.log(arrayNumeros);
 
-console.log(arrayTotal);
-
-document.querySelector("#promedio").innerText= `El promedio es ${calcularPromedio(arrayTotal)}`;
-document.querySelector("#menor").innerText= `El numero menor es ${numMasPequeno(arrayTotal)}`;
-document.querySelector("#mayor").innerText= `El numero mayor es ${numMasGrande(arrayTotal)}`;
-document.querySelector("#repetido").innerText= `El numero mas repetido es ${numMasRepetido(arrayTotal)}`;
+document.querySelector("#promedio").innerText= `El promedio es ${calcularPromedio(arrayNumeros)}`;
+document.querySelector("#menor").innerText= `El numero menor es ${numMasPequeno(arrayNumeros)}`;
+document.querySelector("#mayor").innerText= `El numero mayor es ${numMasGrande(arrayNumeros)}`;
+document.querySelector("#repetido").innerText= `El numero mas repetido es ${numMasRepetido(arrayNumeros)}`;
