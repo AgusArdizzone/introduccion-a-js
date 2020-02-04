@@ -206,7 +206,7 @@ console.log(nuestroTitulo.innerText);
 
 // TAREA: Hagamos un nuevo título! Cambiá el contenido de nuestro 'h1' y ponele lo que quieras.
 
-
+nuestroTitulo.textContent = "Capoo!";
 
 
 
@@ -224,8 +224,7 @@ console.log(nuestroTitulo.innerText);
 
 // TAREA: Actualizá el valor del atributo 'src' de nuestra etiqueta 'img' a "img/kittens.jpeg".
 
-
-
+document.querySelector("img").src = "img/kittens.jpeg";
 
 
 
@@ -249,7 +248,7 @@ console.log(nuestroTitulo.innerText);
 
 // Tarea: Obtené cualquier elemento de la página y cambiale algunos estilos.
 
-
+//nuestroTitulo.style.opacity = "0.2";
 
 
 
@@ -279,8 +278,10 @@ console.log(nuestroTitulo.innerText);
 //
 // P.S. También les podés dar estilos al nuevo nodo que creaste.
 
-
-
+const nodoCabecera = document.querySelector('header');
+const nuevoImg = document.createElement('img');
+nuevoImg.src = "img/woman_bw.jpg";
+nodoCabecera.appendChild(nuevoImg);
 
 
 
