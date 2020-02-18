@@ -12,20 +12,28 @@ document.querySelector("#siguiente").onclick = function(){
 
     limpiarIntegrantes();
     agregarIntegrantes(cantidadIntegrantes);
-
+   
     event.preventDefault();
 }
 
 document.querySelector('#calcular').onclick = function(){
-
-
+    const $edadIntegrantes = document.querySelectorAll('.integrante input');
+    const edades = obtenerEdadIntegrantes($edadIntegrantes);
+    mostrarEdad('mayor',calcularMayorEdad(edades));
+    mostrarEdad('menor',calcularMenorEdad(edades));
+    mostrarEdad('promedio', calcularPromedioEdad(edades));
+    mostrarResultados();
+    mostrarBotonResetear();
     event.preventDefault();
 }
 
-//document.querySelector('#resetear').onclick = 
+document.querySelector('#resetear').onclick = resetear; 
 
 function limpiarIntegrantes(){
-
+    const $integrantes = document.querySelectorAll('.integrante');
+    for (let i = 0; i < $integrantes.length; i++) {
+        $integrantes[i].remove();
+    }
 }
 
 function agregarIntegrantes(cantidadIntegrantes){
@@ -60,12 +68,44 @@ function resetear(){
     limpiarIntegrantes();
     ocultarBotonCalculo();
     ocultarResultados();
+    ocultarBotonResetear();
 }
 
- function mostrarBotonCalculo(){
+function mostrarBotonCalculo(){
     document.querySelector('#calcular').className = '';
 }
 
+function ocultarBotonCalculo(){
+    document.querySelector('#calcular').className = 'oculto';
+}
+
+function mostrarResultados(){
+    document.querySelector('#resultados').className = '';
+}
+
+function ocultarResultados(){
+    document.querySelector('#resultados').className = 'oculto';
+}
+
+function mostrarBotonResetear(){
+    document.querySelector('#resetear').className = '';
+}
+
+function ocultarBotonResetear(){
+    document.querySelector('#resetear').className = 'oculto';
+}
+
+function obtenerEdadIntegrantes($edadIntegrantes){
+    let edades = [];
+    for (let i = 0; i < $edadIntegrantes.length; i++) {
+        edades.push(Number($edadIntegrantes[i].value));
+    }
+    return edades;
+}
+
+function mostrarEdad(tipo,valor){
+    document.querySelector(`#${tipo}-edad`).textContent = valor;
+}
 /*
 TAREA:
 Crear una interfaz que permita agregar ó quitar (botones agregar y quitar) inputs+labels para completar el salario anual de cada integrante de la familia que trabaje.
