@@ -5,17 +5,66 @@ Al hacer click en "calcular", mostrar en un elemento pre-existente la mayor edad
 
 Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuevamente, borrando los inputs ya creados (investigar cómo en MDN).
 */
-const $botonSiguiente = document.querySelector("#siguiente");
 
-$botonSiguiente.onclick = function(){
-    let cantidadFamiliares = document.querySelector('#familiares');
-    let familiar = document.createElement('input');
-    for (let i = 0; i < cantidadFamiliares; i++) {
-        document.querySelector('#integrantes').appendChild('familiar');
+document.querySelector("#siguiente").onclick = function(){
+    const $cantidadIntegrantes = document.querySelector('#cantidad-integrantes');
+    const cantidadIntegrantes = Number($cantidadIntegrantes.value);
+
+    limpiarIntegrantes();
+    agregarIntegrantes(cantidadIntegrantes);
+
+    event.preventDefault();
+}
+
+document.querySelector('#calcular').onclick = function(){
+
+
+    event.preventDefault();
+}
+
+//document.querySelector('#resetear').onclick = 
+
+function limpiarIntegrantes(){
+
+}
+
+function agregarIntegrantes(cantidadIntegrantes){
+    if (cantidadIntegrantes > 0) {
+        mostrarBotonCalculo();
+    } else {
+        resetear();
+    }
+
+    for (let i = 0; i < cantidadIntegrantes; i++) {
+        crearIntegrante(i);
     }
 }
 
+function crearIntegrante(i){
+    const $div = document.createElement('div');
+    $div.className = 'integrante';
 
+    const $label = document.createElement('label');
+    $label.textContent = `Edad del integrante # ${i+1} :`;
+    const $input = document.createElement('input');
+    $input.type = 'number';
+
+    $div.appendChild($label);
+    $div.appendChild($input);
+
+    const $integrantes = document.querySelector('#integrantes');
+    $integrantes.appendChild($div);
+}
+
+function resetear(){
+    limpiarIntegrantes();
+    ocultarBotonCalculo();
+    ocultarResultados();
+}
+
+ function mostrarBotonCalculo(){
+    document.querySelector('#calcular').className = '';
+}
 
 /*
 TAREA:
