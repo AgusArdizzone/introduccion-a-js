@@ -1,0 +1,26 @@
+{
+  "name": "introduccion-a",
+  "version": "1.0.0",
+  "description": "Este repositorio es una traducción casi literal de https://github.com/muses-code-js/js-intro-workshop, de [MusesCodeJS](https://musescodejs.org/) y su autora Tanya Butenko.",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "bootstrap": "^4.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgusArdizzone/introduccion-a-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AgusArdizzone/introduccion-a-js/issues"
+  },
+  "homepage": "https://github.com/AgusArdizzone/introduccion-a-js#readme"
+}
