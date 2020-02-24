@@ -72,7 +72,8 @@ function resetear(){
 }
 
 function mostrarBotonCalculo(){
-    document.querySelector('#calcular').className = '';
+    document.querySelector('#calcular').classList.remove('oculto');
+    document.querySelector('#calcular').classList.add("btn","btn-primary");
 }
 
 function ocultarBotonCalculo(){

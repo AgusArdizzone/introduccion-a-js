@@ -10,17 +10,31 @@
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
     
 </head>
-<body class="bg-warning">
-    <h1 class=" text-center alert-info" >El menor, el mayor y la edad de la familia</h1>
+<body class="bg-light">
+    <div>
+        <h1 class=" text-center alert-info" >El menor, el mayor y la edad de la familia</h1>
+    </div>
     <form >
-        <label>Cuantos familiares tenes?<input type="number" id="cantidad-integrantes"/></label> 
-        <button type="submit" id="siguiente">Siguiente</button>
-
+        <div class="form-group row">
+            <label class="col-sm col-form-label">Cuantos familiares tienes?</label>
+            <div class="col-sm">
+                <input type="number" class="form-control" id="cantidad-integrantes">
+            </div>
+            <div class="col-sm-6"></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button class="btn btn-primary" type="submit" id="siguiente">Siguiente</button>
+            </div>
+        </div>
+        <!--<label class="">Cuantos familiares tenes?<input type="number" id="cantidad-integrantes"/></label> 
+        <button  type="submit" id="siguiente">Siguiente</button>-->
+        
         <div id="integrantes">
 
         </div>
 
-        <button type="submit" id="calcular" class="oculto">calcular</button>
+        <button type="submit" id="calcular" class="oculto ">calcular</button>
 
         <div id="resultados" class="oculto">
         <p>Mayor Edad: <strong id="mayor-edad"></strong></p>
